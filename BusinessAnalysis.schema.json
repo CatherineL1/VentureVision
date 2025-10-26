@@ -1,0 +1,101 @@
+{
+  "name": "BusinessAnalysis",
+  "type": "object",
+  "properties": {
+    "idea_description": {
+      "type": "string",
+      "description": "The business idea in plain text"
+    },
+    "success_score": {
+      "type": "number",
+      "description": "Success probability percentage (0-100)"
+    },
+    "revenue_forecast": {
+      "type": "object",
+      "description": "Revenue projections over time",
+      "properties": {
+        "year_1": {
+          "type": "number"
+        },
+        "year_2": {
+          "type": "number"
+        },
+        "year_3": {
+          "type": "number"
+        }
+      }
+    },
+    "unit_sales_forecast": {
+      "type": "object",
+      "description": "Unit sales projections",
+      "properties": {
+        "year_1": {
+          "type": "number"
+        },
+        "year_2": {
+          "type": "number"
+        },
+        "year_3": {
+          "type": "number"
+        }
+      }
+    },
+    "key_factors": {
+      "type": "array",
+      "description": "Factors affecting success probability",
+      "items": {
+        "type": "object",
+        "properties": {
+          "factor": {
+            "type": "string"
+          },
+          "impact": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "competitors": {
+      "type": "array",
+      "description": "Existing competitors and similar products",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "threat_level": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "description": "Actionable recommendations to improve odds",
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "impact_on_score": {
+            "type": "number"
+          },
+          "priority": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "idea_description"
+  ]
+}
